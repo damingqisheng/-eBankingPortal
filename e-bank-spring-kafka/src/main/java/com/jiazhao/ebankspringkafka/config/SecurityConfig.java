@@ -40,11 +40,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers(HttpMethod.POST, "/register/*").permitAll()
                 .antMatchers(HttpMethod.POST, "/authenticate/*").permitAll()
-                .antMatchers(HttpMethod.POST, "/search/*").permitAll()
-//                .antMatchers("/stays").hasAuthority("ROLE_HOST")
-//                .antMatchers("/stays/*").hasAuthority("ROLE_HOST")
-//                .antMatchers("/search").hasAuthority("ROLE_GUEST")
-//                .antMatchers("/reservations").hasAuthority("ROLE_GUEST")
+                .antMatchers("/search/*").hasAuthority("ROLE_HOST")
+                .antMatchers("/add/*").hasAuthority("ROLE_HOST")
+                .antMatchers("/make/*").hasAuthority("ROLE_HOST")
                 .anyRequest().authenticated()
                 .and()
                 .csrf()
@@ -52,9 +50,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         http
                 .sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-//                .and()
-//                .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .and()
+                .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
 
     }
 

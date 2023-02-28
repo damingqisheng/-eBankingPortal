@@ -19,8 +19,8 @@ public class User implements Serializable{
     private String currencyType;
     private String fullName;
     private String token;
-    private float debitNum;
-    private float creditNum;
+    private double debitNum;
+    private double creditNum;
 
     public User(String username, String password, String currencyType, String fullName) {
         this.username = username;

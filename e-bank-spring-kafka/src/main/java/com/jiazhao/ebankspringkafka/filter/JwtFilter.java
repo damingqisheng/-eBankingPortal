@@ -47,10 +47,11 @@ public class JwtFilter extends OncePerRequestFilter {
         if (jwt != null && jwtUtil.validateToken(jwt) &&
                 SecurityContextHolder.getContext().getAuthentication() == null) {
             String username = jwtUtil.extractUsername(jwt);
-            User user = userDao.findByUsername(username);
+//            User user = userDao.findByUsername(username);
+            User user = new User();
             if (user != null) {
                 List<GrantedAuthority> grantedAuthorities =
-                        Arrays.asList(new GrantedAuthority[]{new SimpleGrantedAuthority("user")});
+                        Arrays.asList(new GrantedAuthority[]{new SimpleGrantedAuthority("ROLE_HOST")});
                 UsernamePasswordAuthenticationToken
                         usernamePasswordAuthenticationToken = new
                         UsernamePasswordAuthenticationToken(
@@ -58,6 +59,8 @@ public class JwtFilter extends OncePerRequestFilter {
                 usernamePasswordAuthenticationToken.setDetails(new
                         WebAuthenticationDetailsSource().buildDetails(httpServletRequest));
                 SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
+            } else {
+                throw new IOException("token invalid");
             }
         }
         filterChain.doFilter(httpServletRequest, httpServletResponse);

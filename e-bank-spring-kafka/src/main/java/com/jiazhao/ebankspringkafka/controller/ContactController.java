@@ -1,8 +1,9 @@
 package com.jiazhao.ebankspringkafka.controller;
 
-import com.jiazhao.ebankspringkafka.pojo.Transaction;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.jiazhao.ebankspringkafka.pojo.Contact;
 import com.jiazhao.ebankspringkafka.pojo.User;
-import com.jiazhao.ebankspringkafka.service.TransactionService;
+import com.jiazhao.ebankspringkafka.service.ContactService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -10,15 +11,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/make")
-public class TransactionController {
-
+public class ContactController {
     @Autowired
-    TransactionService transactionService;
+    ContactService contactService;
 
-    @PostMapping("/transaction")
-    public int makeTransaction(@RequestBody Transaction transaction) {
-        transactionService.makeTransaction(transaction);
-        return 200;
+    @PostMapping("/add/contact")
+    public int addContact(@RequestBody Contact contact) throws JsonProcessingException {
+        return contactService.addContact(contact);
     }
 }
