@@ -178,17 +178,17 @@ public class ConsumerFastStart {
         return null;
     }
 
-    public static void main(String[] args) {
-        ConsumerFastStart consumerFastStart = new ConsumerFastStart();
-//        User user = new User("admin@gmail.com_EUR", "123", "EUR", "");
-//        System.out.println(consumerFastStart.findUser(user.getUsername()));
-//        User user = new User("jerry@gmail.com_GBP", "123", "GBP", "");
-//        user.setUserId(111);
-//        consumerFastStart.getTransactions(user.getUserId(), user.getUsername(), System.currentTimeMillis() - (30L * 24L * 60L * 60L * 1000L) , System.currentTimeMillis());
-//        System.out.println("现在是：" + System.currentTimeMillis());
-
-        consumerFastStart.getTransactions(100, "tom@gmail.com_GBP", 0, System.currentTimeMillis());
-    }
+//    public static void main(String[] args) {
+//        ConsumerFastStart consumerFastStart = new ConsumerFastStart();
+////        User user = new User("admin@gmail.com_EUR", "123", "EUR", "");
+////        System.out.println(consumerFastStart.findUser(user.getUsername()));
+////        User user = new User("jerry@gmail.com_GBP", "123", "GBP", "");
+////        user.setUserId(111);
+////        consumerFastStart.getTransactions(user.getUserId(), user.getUsername(), System.currentTimeMillis() - (30L * 24L * 60L * 60L * 1000L) , System.currentTimeMillis());
+////        System.out.println("现在是：" + System.currentTimeMillis());
+//
+//        consumerFastStart.getTransactions(100, "tom@gmail.com_GBP", 0, System.currentTimeMillis());
+//    }
 
 
 }

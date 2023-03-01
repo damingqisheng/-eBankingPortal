@@ -1,9 +1,5 @@
 package com.jiazhao.ebankspringkafka.service;
 
-/**
- * @author Lee
- * @date 12/17/2021 - 8:55 PM
- */
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.jiazhao.ebankspringkafka.Exception.UserAlreadyExistException;

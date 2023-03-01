@@ -15,12 +15,12 @@ public class TopicManagementTest {
     @InjectMocks
     TopicManagement topicManagement;
 
-    @Test
-    public void testCreateTopicConfig() {
-        MockitoAnnotations.initMocks(this);
-        MockitoAnnotations.initMocks(topicManagement);
-//        topicManagement.createTopicConfig("test");
-    }
+//    @Test
+//    public void testCreateTopicConfig() {
+//        MockitoAnnotations.initMocks(this);
+//        MockitoAnnotations.initMocks(topicManagement);
+////        topicManagement.createTopicConfig("test");
+//    }
 
     @Test
     public void testDescribeTopicConfig() throws ExecutionException, InterruptedException {
@@ -29,12 +29,12 @@ public class TopicManagementTest {
         topicManagement.describeTopicConfig("test");
     }
 
-    @Test
-    public void testAddTopicPartitions() throws ExecutionException, InterruptedException {
-        MockitoAnnotations.initMocks(this);
-        MockitoAnnotations.initMocks(topicManagement);
-        topicManagement.addTopicPartitions("test");
-    }
+//    @Test
+//    public void testAddTopicPartitions() throws ExecutionException, InterruptedException {
+//        MockitoAnnotations.initMocks(this);
+//        MockitoAnnotations.initMocks(topicManagement);
+//        topicManagement.addTopicPartitions("test");
+//    }
 
 
 }

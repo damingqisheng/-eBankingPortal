@@ -13,7 +13,7 @@ public class ConsumerFastStartTest {
     public void testFindUser() {
         MockitoAnnotations.initMocks(this);
         MockitoAnnotations.initMocks(consumerFastStart);
-        User user = new User("admin@gmail.com", "123", "usd", "admin");
+        User user = new User("admin@gmail.com_EUR", "123", "EUR", "admin");
         System.out.println(consumerFastStart.userExists("test", user.getUsername()));
     }
 }

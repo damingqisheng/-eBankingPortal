@@ -37,31 +37,31 @@ public class TopicManagement {
         client.close();
     }
 
-    public void addTopicPartitions(String topic) throws ExecutionException, InterruptedException {
-        Properties props = new Properties();
-        props.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, Constants.BROKER_LIST);
-        props.put(AdminClientConfig.REQUEST_TIMEOUT_MS_CONFIG, 30000);
-        AdminClient client = AdminClient.create(props);
+//    public void addTopicPartitions(String topic) throws ExecutionException, InterruptedException {
+//        Properties props = new Properties();
+//        props.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, Constants.BROKER_LIST);
+//        props.put(AdminClientConfig.REQUEST_TIMEOUT_MS_CONFIG, 30000);
+//        AdminClient client = AdminClient.create(props);
+//
+//        NewPartitions newPartitions = NewPartitions.increaseTo(4);
+//        Map<String, NewPartitions> newPartitionMap = new HashMap<>();
+//        newPartitionMap.put(topic, newPartitions);
+//        CreatePartitionsResult result = client.createPartitions(newPartitionMap);
+//        result.all().get();
+//        client.close();
+//    }
 
-        NewPartitions newPartitions = NewPartitions.increaseTo(4);
-        Map<String, NewPartitions> newPartitionMap = new HashMap<>();
-        newPartitionMap.put(topic, newPartitions);
-        CreatePartitionsResult result = client.createPartitions(newPartitionMap);
-        result.all().get();
-        client.close();
-    }
-
-    public static void main(String[] args) throws InterruptedException, ExecutionException {
-        TopicManagement topicManagement = new TopicManagement();
-//        AdminClient adminClient = topicManagement.adminClient();
-//        for(int i = 0; i < 2; i++) {
-//            if(i != 8) {
-//                adminClient.createTopics(
-//                        Arrays.asList(topicManagement.createTopicConfig("contacts"+i)));
-//                Thread.sleep(1000);
-//            }
-//        }
-        topicManagement.describeTopicConfig("contacts0");
-    }
+//    public static void main(String[] args) throws InterruptedException, ExecutionException {
+//        TopicManagement topicManagement = new TopicManagement();
+////        AdminClient adminClient = topicManagement.adminClient();
+////        for(int i = 0; i < 2; i++) {
+////            if(i != 8) {
+////                adminClient.createTopics(
+////                        Arrays.asList(topicManagement.createTopicConfig("contacts"+i)));
+////                Thread.sleep(1000);
+////            }
+////        }
+//        topicManagement.describeTopicConfig("contacts0");
+//    }
 
 }

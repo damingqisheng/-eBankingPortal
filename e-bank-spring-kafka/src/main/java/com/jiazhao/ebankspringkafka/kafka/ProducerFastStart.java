@@ -100,36 +100,36 @@ public class ProducerFastStart {
         }
     }
 
-    public static void main(String[] args) throws JsonProcessingException, InterruptedException {
-
-//        User user = new User("tom@gmail.com_GBP", "123", "GBP", "tom");
-        ProducerFastStart producerFastStart = new ProducerFastStart();
-//        producerFastStart.registerUser("users", user);
-//        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-////        Date date = new Date();
-////        String formattedDate = formatter.format(date);
-////        System.out.println(formattedDate);
-////        int adminDebit = 4800;
-////        int adminCredit = 5000;
-////        int tomDebit = 5200;
-////        int tomCredit = 5000;
-////        for(int i = 0; i < 100; i++) {
-////            Transaction transaction =
-////                    new Transaction(Generator.generateUniqueId(), "admin@gmail.com_EUR", 99,
-////                            "jerry@gmail.com_GBP", 111, -1, --adminDebit, adminCredit, formatter.format(date));
-////
-////            producerFastStart.makeTransaction(transaction, System.currentTimeMillis());
-////            Thread.sleep(100);
-////            Transaction transaction2 =
-////                    new Transaction(Generator.generateUniqueId(), "jerry@gmail.com_GBP", 111,
-////                            "admin@gmail.com_EUR", 99, +1, ++tomDebit, tomCredit, formatter.format(date));
-////            producerFastStart.makeTransaction(transaction2, System.currentTimeMillis());
-////            Thread.sleep(100);
-////        }
-        Contact contact = new Contact("jerry@gmail.com_GBP", 111);
-        producerFastStart.addContact(99, "admin@gmail.com_EUR", contact);
-
-    }
+//    public static void main(String[] args) throws JsonProcessingException, InterruptedException {
+//
+////        User user = new User("tom@gmail.com_GBP", "123", "GBP", "tom");
+//        ProducerFastStart producerFastStart = new ProducerFastStart();
+////        producerFastStart.registerUser("users", user);
+////        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//////        Date date = new Date();
+//////        String formattedDate = formatter.format(date);
+//////        System.out.println(formattedDate);
+//////        int adminDebit = 4800;
+//////        int adminCredit = 5000;
+//////        int tomDebit = 5200;
+//////        int tomCredit = 5000;
+//////        for(int i = 0; i < 100; i++) {
+//////            Transaction transaction =
+//////                    new Transaction(Generator.generateUniqueId(), "admin@gmail.com_EUR", 99,
+//////                            "jerry@gmail.com_GBP", 111, -1, --adminDebit, adminCredit, formatter.format(date));
+//////
+//////            producerFastStart.makeTransaction(transaction, System.currentTimeMillis());
+//////            Thread.sleep(100);
+//////            Transaction transaction2 =
+//////                    new Transaction(Generator.generateUniqueId(), "jerry@gmail.com_GBP", 111,
+//////                            "admin@gmail.com_EUR", 99, +1, ++tomDebit, tomCredit, formatter.format(date));
+//////            producerFastStart.makeTransaction(transaction2, System.currentTimeMillis());
+//////            Thread.sleep(100);
+//////        }
+//        Contact contact = new Contact("jerry@gmail.com_GBP", 111);
+//        producerFastStart.addContact(99, "admin@gmail.com_EUR", contact);
+//
+//    }
 
 
 

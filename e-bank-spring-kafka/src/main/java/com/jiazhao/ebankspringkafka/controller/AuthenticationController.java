@@ -8,10 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * @author Lee
- * @date 12/22/2021 - 6:28 PM
- */
+
 
 @RestController
 public class AuthenticationController {
