@@ -13,7 +13,7 @@ import java.util.HashMap;
 @Component
 public class JwtUtil {
     @Value("${jwt.secret}")
-    private  String secret;
+    private String secret;
 
     public String generateToken(String subject){
         return Jwts.builder()

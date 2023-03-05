@@ -15,6 +15,11 @@ public class UserDao {
     @Autowired
     ProducerFastStart producerFastStart;
 
+    public UserDao(ConsumerFastStart consumerFastStart, ProducerFastStart producerFastStart) {
+        this.producerFastStart = producerFastStart;
+        this.consumerFastStart = consumerFastStart;
+    }
+
     public User findByUsername(String username) {
         return consumerFastStart.findUser(username);
     }

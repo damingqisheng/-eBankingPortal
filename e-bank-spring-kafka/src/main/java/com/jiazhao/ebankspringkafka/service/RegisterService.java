@@ -22,7 +22,7 @@ public class RegisterService {
         this.passwordEncoder = passwordEncoder;
     }
 
-    @Transactional(isolation = Isolation.SERIALIZABLE)
+    @Transactional(isolation = Isolation.REPEATABLE_READ)
     public void add(User user) throws UserAlreadyExistException, JsonProcessingException {
         if(userRepo.userExists(user)) {
             throw new UserAlreadyExistException("User already exists");

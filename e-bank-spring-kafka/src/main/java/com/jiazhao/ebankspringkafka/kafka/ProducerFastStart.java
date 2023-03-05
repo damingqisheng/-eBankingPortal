@@ -41,7 +41,6 @@ public class ProducerFastStart {
     }
 
     public void makeTransaction (Transaction transaction, long timeStamp) throws JsonProcessingException {
-        transaction.setTransactionId(Generator.generateUniqueId());
         ObjectMapper mapper = new ObjectMapper();
         mapper.enable(SerializationFeature.INDENT_OUTPUT);
         String transactionJson = mapper.writeValueAsString(transaction);

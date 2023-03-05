@@ -43,6 +43,16 @@ public class Transaction implements Serializable {
         this.time = time;
     }
 
+    public Transaction(String transactionId, String username, int userId, String receiver, int receiverId, int transAmount, String time) {
+        this.transactionId = transactionId;
+        this.username = username;
+        this.userId = userId;
+        this.receiver = receiver;
+        this.receiverId = receiverId;
+        this.transAmount = transAmount;
+        this.time = time;
+    }
+
     @Override
     public String toString() {
         return "Transaction{" +

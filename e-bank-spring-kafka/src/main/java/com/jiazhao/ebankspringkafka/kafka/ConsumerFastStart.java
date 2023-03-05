@@ -33,8 +33,6 @@ public class ConsumerFastStart {
     }
 
     public List<Transaction> getTransactions(int userId, String username, long startTime, long endTime) {
-        System.out.println("startTime: " + startTime);
-        System.out.println("endTime: " + endTime);
 
         String topic = "transactions" + userId % 7;
         KafkaConsumer<String, String> consumer = getKafkaConsumer("group.getUser");
@@ -67,12 +65,10 @@ public class ConsumerFastStart {
                         String time = jsonNode.get("time").asText();
                         Transaction transaction = new Transaction(transactionId, username, userId, receiver, receiverId, transAmount, debit, credit, time);
                         transactions.add(transaction);
-                        System.out.println(transaction);
 
                     }
                 }
             }
-            if(transactions.isEmpty()) return null;
             double balance = totalMoney > 5000 ? totalMoney - 5000 : 0;
             double credit = totalMoney - balance;
             Transaction transaction = new Transaction();
@@ -108,9 +104,9 @@ public class ConsumerFastStart {
                     String fullName = jsonNode.get("fullName").asText();
                     String currencyType = jsonNode.get("currencyType").asText();
                     User user = new User(username, password, userId, currencyType, fullName, "", 5000.0f, 5000.0f);
-                    System.out.println("username: " +username);
-                    System.out.println("password: " +password);
-                    System.out.println("currencyType: " +currencyType);
+//                    System.out.println("username: " +username);
+//                    System.out.println("password: " +password);
+//                    System.out.println("currencyType: " +currencyType);
                     return user;
                 }
             }

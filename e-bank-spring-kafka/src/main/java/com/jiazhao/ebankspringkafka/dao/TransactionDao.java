@@ -19,6 +19,11 @@ public class TransactionDao {
     @Autowired
     ProducerFastStart producerFastStart;
 
+    public TransactionDao(ConsumerFastStart consumerFastStart) {
+        this.consumerFastStart = consumerFastStart;
+    }
+
+
     public List<Transaction> getTransactions(int userId, String username, long startTime, long endTime) {
         List<Transaction> res = consumerFastStart.getTransactions(userId, username, startTime, endTime);
         return res;

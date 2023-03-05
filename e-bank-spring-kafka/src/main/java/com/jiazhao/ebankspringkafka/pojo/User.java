@@ -28,4 +28,10 @@ public class User implements Serializable{
         this.currencyType = currencyType;
         this.fullName = fullName;
     }
+
+    public User(String username, String password, int userId) {
+        this.username = username;
+        this.password = password;
+        this.userId = userId;
+    }
 }

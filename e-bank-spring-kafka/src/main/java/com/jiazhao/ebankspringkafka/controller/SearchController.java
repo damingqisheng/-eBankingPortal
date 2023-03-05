@@ -25,8 +25,9 @@ public class SearchController {
     }
 
     @GetMapping("/transactions/{userId}/{username}/{dateString}")
-    public String getTransactions(@PathVariable int userId, @PathVariable String username, @PathVariable String dateString) throws JsonProcessingException {
+    public String getTransactions(@PathVariable int userId, @PathVariable String username, @PathVariable String dateString) throws IOException {
         List<Transaction> transactions = searchService.getTransactions(userId, username, dateString);
+        if(transactions == null || transactions.size() == 0)  throw new IOException("No transactions exists");
         Collections.reverse(transactions);
         ObjectMapper objectMapper = new ObjectMapper();
         String json = objectMapper.writeValueAsString(transactions);

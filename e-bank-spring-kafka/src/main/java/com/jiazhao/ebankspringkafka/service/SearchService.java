@@ -23,6 +23,8 @@ public class SearchService {
     @Autowired
     TransactionDao transactionDao;
 
+
+
     public User getUserInfo(String username) {
         User user = userDao.findByUsername(username);
         if(user == null) {

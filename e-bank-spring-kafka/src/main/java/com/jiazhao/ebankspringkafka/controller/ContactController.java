@@ -15,6 +15,10 @@ public class ContactController {
     @Autowired
     ContactService contactService;
 
+    public ContactController(ContactService contactService) {
+        this.contactService = contactService;
+    }
+
     @PostMapping("/add/contact")
     public int addContact(@RequestBody Contact contact) throws JsonProcessingException {
         return contactService.addContact(contact);

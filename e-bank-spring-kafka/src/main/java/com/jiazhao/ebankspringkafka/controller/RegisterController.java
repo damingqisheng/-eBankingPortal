@@ -1,9 +1,5 @@
 package com.jiazhao.ebankspringkafka.controller;
 
-/**
- * @author Lee
- * @date 12/18/2021 - 10:26 AM
- */
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.jiazhao.ebankspringkafka.pojo.User;
 import com.jiazhao.ebankspringkafka.service.RegisterService;
